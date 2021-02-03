@@ -1,0 +1,10 @@
+Bundle-Name: partner-info-api
+Bundle-SymbolicName: com.liferay.partner.info.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.liferay.partner.info.exception,\
+	com.liferay.partner.info.model,\
+	com.liferay.partner.info.service,\
+	com.liferay.partner.info.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../partner-info-service/service.xml
