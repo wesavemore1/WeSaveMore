@@ -1,0 +1,4 @@
+Bundle-Name: partner-portlet
+Bundle-SymbolicName: com.liferay.savemore
+Bundle-Version: 1.0.0
+Export-Package: com.liferay.savemore.constants

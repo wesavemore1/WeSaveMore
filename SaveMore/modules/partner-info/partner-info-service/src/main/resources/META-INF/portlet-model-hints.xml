@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.liferay.partner.info.model.Partner">
+		<field name="uuid" type="String" />
+		<field name="partnetId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="partnername" type="String" />
+		<field name="licensename" type="String" />
+		<field name="countryId" type="long" />
+		<field name="companyemail" type="String" />
+		<field name="companyphone" type="String" />
+		<field name="companyPO" type="String" />
+		<field name="businesscategories" type="String" />
+		<field name="address" type="String" />
+		<field name="signatory" type="String" />
+		<field name="signatoryphone" type="String" />
+		<field name="signatoryemail" type="String" />
+		<field name="partnerStatus" type="String" />
+		<field name="field1" type="String" />
+		<field name="field2" type="boolean" />
+		<field name="field3" type="int" />
+		<field name="folderId" type="long" />
+		<field name="field5" type="String" />
+		<field name="regionId" type="long" />
+	</model>
+	<model name="com.liferay.partner.info.model.Region">
+		<field name="uuid" type="String" />
+		<field name="regionId" type="long" />
+		<field name="region" type="String" />
+		<field name="partnetId" type="long" />
+	</model>
+</model-hints>

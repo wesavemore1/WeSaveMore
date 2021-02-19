@@ -2,13 +2,13 @@
 <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.3.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_3_0.dtd">
 
 <service-builder dependency-injector="ds" package-path="com.liferay.partner.info">
-	<namespace>FOO</namespace>
+	<namespace>Partner</namespace>
 	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
-	<entity local-service="true" name="Foo" remote-service="true" uuid="true">
+	<entity local-service="true" name="Partner" remote-service="false" uuid="true">
 
 		<!-- PK fields -->
 
-		<column name="fooId" primary="true" type="long" />
+		<column name="partnetId" primary="true" type="long" />
 
 		<!-- Group instance -->
 
@@ -23,14 +23,32 @@
 		<column name="modifiedDate" type="Date" />
 
 		<!-- Other fields -->
+		
+		<column name="partnername" type="String" />
+		<column name="licensename" type="String" />
+		<column name="countryId" type="long" />
+		<column name="companyemail" type="String" />
+		<column name="companyphone" type="String" />
+		<column name="companyPO" type="String" />
+		<column name="businesscategories" type="String" />
+		<column name="address" type="String" />
+		
+		<column name="signatory" type="String" />
+		<column name="signatoryphone" type="String" />
+		<column name="signatoryemail" type="String" />
+		
+		<column name="partnerStatus" type="String" />
+		
 
 		<column name="field1" type="String" />
 		<column name="field2" type="boolean" />
 		<column name="field3" type="int" />
-		<column name="field4" type="Date" />
+		<column name="folderId" type="long" />
 		<column name="field5" type="String" />
 
 		<!-- Order -->
+        <column name="regionId" type="long"></column>
+        <column name="regions" type="Collection" entity="Region"/>
 
 		<order by="asc">
 			<order-column name="field1" />
@@ -43,8 +61,37 @@
 		</finder>
 
 		<!-- References -->
-
+		<reference entity="Country" package-path="com.liferay.portal" />
+        <reference entity="DLFolder" package-path="com.liferay.portlet.documentlibrary" />
 		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
 		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
 	</entity>
+
+
+	<entity local-service="true" name="Region" remote-service="false" uuid="true">
+ 	<!-- PK fields -->
+
+		<column name="regionId" primary="true" type="long" />
+		<column name="region"  type="String" />
+		<column name="partnetId" type="long"/>
+		
+		
+		<finder name="regionId" return-type="Collection">
+	        <finder-column name="regionId" />
+	    </finder>
+	
+	    <finder name="partnetId" return-type="Collection">
+	        <finder-column name="partnetId" />
+	    </finder>
+		
+		
+		
+      
+        
+	
+	</entity>
+	<exceptions>
+		<exception>PartnerName</exception>
+		
+	</exceptions>
 </service-builder>
